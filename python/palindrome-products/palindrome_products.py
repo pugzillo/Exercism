@@ -1,6 +1,38 @@
+def get_factors(x):
+    factors = list()
+    for i in range(1, x + 1):
+       if x % i == 0:
+           factors.append(i)
+    return(factors)
+
 def products(max_factor, min_factor):
     product_dict = dict()   # Dict with all products for min and max
-    
+
+
+    min_product = min_factor ** 2
+    max_product = max_factor ** 2
+    # Find the minimum palindrone
+    # go between th min and max product 
+    for i in range(min_factor,max_factor+1):
+        # if the number id not a palindrone, then next
+        if str(i)[::-1] != str(i):
+            continue
+        # if the number is a palindrone, then we'll see if we can get a paired factor within range
+        # get the products for i and then use a doulble loop to find paired factors
+        for factor_a in get_factors(i):
+            for factor_b in get_factors(i):
+                product = factor_a * factor_b
+
+
+
+        # separately find the max palindrone 
+
+
+        
+
+    # for each palindrone, Get all of the factors from min to max, inclusive and then find pairs
+
+
     for i in range(min_factor,max_factor+1):
         print(i)
         for j in range(min_factor, max_factor+1):
